@@ -71,15 +71,22 @@ const viewRoles = () => {
   });
 }
 
+//How to add manager tied back to employees manager id
 const viewEmployees = () => {
   db.query('SELECT employee.id, employee.first_name, employee.last_name, role.title, department.department_name, role.salary FROM employee JOIN role ON employee.role_id = role.id JOIN department ON department.id = role.department_id;', function (err, results) {
     console.log(results);
   });
 
 }
-const addDepartment = () => {
-
-
+const addDepartment = (newDept) => {
+  inquirer.prompt({
+    type: 'input',
+    message: 'What department would you like to add?',
+    name: 'newDept',
+    })
+  db.query(`INSERT INTO department (department_name) VALUES($); SELECT * FROM department`,newDept, function (err, results) {
+    console.log(results);
+  });
 }
 const addRole = () => {
 
