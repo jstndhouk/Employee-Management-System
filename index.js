@@ -8,9 +8,9 @@ const db = mysql.createConnection({
     user: 'root',
     // TODO: Add MySQL password
     password: 'root',
-    database: 'movies_db'
+    database: 'staff_db'
   },
-  console.log(`Connected to the movies_db database.`)
+  console.log(`Connected to the staff_db database.`)
 );
 
 
@@ -63,13 +63,18 @@ const viewDepartments = () => {
   });
 }
 
+//Joins the deparment with the associated roles then displays all of them per the readme.
+//How do I get this formatted in a nice table???????????????????????????????????????
 const viewRoles = () => {
-
-
+  db.query('SELECT role.title, role.id, department.department_name, role.salary FROM role RIGHT JOIN department ON role.department_id = department.id ORDER BY role.id;', function (err, results) {
+    console.log(results);
+  });
 }
 
 const viewEmployees = () => {
-
+  db.query('SELECT employee.id, employee.first_name, employee.last_name, role.title, department.department_name, role.salary FROM employee JOIN role ON employee.role_id = role.id JOIN department ON department.id = role.department_id;', function (err, results) {
+    console.log(results);
+  });
 
 }
 const addDepartment = () => {
