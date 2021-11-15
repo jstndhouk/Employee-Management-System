@@ -17,9 +17,9 @@ VALUES ('Project Manager', '110000', '3'),
        
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ('Shinida', 'Bump', '1', '2'),
-       ('Sharon', 'Needles', '1', '2'),
-       ('Trixie', 'Mattel', '5', '4'),
-       ('Katya', 'Zamalochakova', '5','4'),
+       ('Sharon', 'Needles', '1', NULL),
+       ('Trixie', 'Mattel', '5', '1'),
+       ('Katya', 'Zamalochakova', '5', NULL),
        ('Ginger', 'Minj','4', NULL),
        ('Violet', 'Chachki', '4', NULL),
        ('Bianca', 'DelRio','2', NULL),

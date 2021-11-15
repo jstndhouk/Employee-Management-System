@@ -11,8 +11,9 @@
     "url": "git+https://github.com/jstndhouk/Employee-Management-System.git"
   },
   "dependencies": {
-    "mysql2": "^2.2.5",
-    "inquirer": "^6.2.1"
+    "console.table": "^0.10.0",
+    "inquirer": "^6.2.1",
+    "mysql2": "^2.2.5"
   },
   "devDependencies": {
     "jest": "^24.8.0"
