@@ -92,6 +92,7 @@ const addDepartment = (newDept) => {
         console.table(results);
       db.query(`SELECT * FROM department`, function (err, results) {
         console.table(results);
+        console.log(`${response.newDept} has been added to the department table!`)
         userPrompt();
       });
     })
@@ -127,6 +128,7 @@ db.query(`SELECT * FROM department`, function (err, results) {
       db.query('INSERT INTO role (title, salary, department_id) VALUES(?, ?, ?);', [newRoleName, newRoleSalary, newRoleDeptID], function (err, results) {
       });
       db.query('SELECT * FROM role', function (err, results) {
+        console.log(`${newRoleName} has been added to the role table!`)
         console.table(results);
         userPrompt();
         });
@@ -172,6 +174,7 @@ const addEmployee = () => {
           db.query('INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES(?, ?, ?, ?);', [newFirstName, newLastName, newRole, newManager ], function (err, results) {
           });
           db.query('SELECT * FROM employee', function (err, results) {
+            console.log(`${newFirstName} has been added to the employee table!`)
             console.table(results);
             userPrompt();
             });
@@ -202,6 +205,7 @@ const updateRole = () =>{
       })
     db.query('SELECT * FROM employee', function (err, results) {
       console.table(results);
+      console.log(`${employeeToBeUpdated} has been updated to the table!`)
       userPrompt();
       });
     })
